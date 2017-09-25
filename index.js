@@ -4,7 +4,10 @@
 
 'use strict';
 
-var debug = require('debug')('app');
+var debug = require('debug')('app'),
+    log   = console.log.bind(console),
+    warn  = console.warn.bind(console),
+    err   = console.error.bind(console);
 
 
 /**
@@ -21,16 +24,17 @@ function isPrimitive ( value ) {
  *
  * @param {*} value value for logging
  */
-function log ( value ) {
-    var util;
+module.exports = function ( value ) {
+    var util, tmp;
 
     if ( isPrimitive(value) ) {
+        log(value);
         debug(value);
     } else {
         util = require('util');
-        debug(util.inspect(value, false, 1));
+        tmp  = util.inspect(value, false, 1)
+
+        log(tmp);
+        debug(tmp);
     }
-}
-
-
-module.exports = log;
+};
