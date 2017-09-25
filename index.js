@@ -4,14 +4,32 @@
 
 'use strict';
 
+var debug = require('debug')('app');
+
 
 /**
  *
+ * @param value
+ * @return {boolean}
  */
-function log ( obj ) {
-    const util = require('util');
+function isPrimitive ( value ) {
+    return value !== function () { return this; }.call(value);
+}
 
-    console.log(util.inspect(obj, false, 1));
+
+/**
+ *
+ * @param {*} value value for logging
+ */
+function log ( value ) {
+    var util;
+
+    if ( isPrimitive(value) ) {
+        debug(value);
+    } else {
+        util = require('util');
+        debug(util.inspect(value, false, 1));
+    }
 }
 
 
