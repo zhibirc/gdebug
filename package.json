@@ -1,0 +1,26 @@
+{
+  "name": "l",
+  "version": "1.0.0",
+  "description": "logger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhibirc/l.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zhibirc/l/issues"
+  },
+  "homepage": "https://github.com/zhibirc/l#readme",
+  "devDependencies": {
+    "cjs-eslint-config": "^1.1.0"
+  },
+  "dependencies": {
+    "debug": "^3.0.1"
+  }
+}
