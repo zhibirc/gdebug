@@ -2,28 +2,45 @@
  * Logger.
  */
 
-'use strict';
+var defaultStyle = '%c background: #000; color: #0f0;',
+    _log         = console.log,
+    _assert      = console.assert;
 
+
+/**
+ * Construct logger instance.
+ *
+ * @param {Object} [config] - configuration options
+ *
+ * @constructor
+ */
+function Logger ( config ) {
+    this.cache = {};
+    this.style = config.style || defaultStyle;
+}
+
+
+/**
+ * Basic log worker.
+ */
+Logger.prototype.log = function ( data ) {
+    _log(this.style, data);
+};
+
+
+module.exports = Logger;
+
+
+/*
 var debug = require('debug')('app'),
     log   = console.log.bind(console),
     warn  = console.warn.bind(console),
     err   = console.error.bind(console);
 
-
-/**
- *
- * @param value
- * @return {boolean}
- */
 function isPrimitive ( value ) {
     return value !== function () { return this; }.call(value);
 }
 
-
-/**
- *
- * @param {*} value value for logging
- */
 module.exports = function ( value ) {
     var util, tmp;
 
@@ -38,3 +55,4 @@ module.exports = function ( value ) {
         debug(tmp);
     }
 };
+*/
