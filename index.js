@@ -2,7 +2,7 @@
  * Logger.
  */
 
-var defaultStyle = '%c background: #000; color: #0f0;',
+var config = require('./config'),
     _log         = console.log,
     _assert      = console.assert;
 
