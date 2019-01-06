@@ -14,9 +14,11 @@ module.exports = {
     output: {
         devTools:  {
             styles: {
-                error:   '',
-                info:    '',
-                success: ''
+                error:    '',
+                info:     '',
+                success:  '',
+                progress: '',
+                event:    ''
             }
         },
         network:   {},
