@@ -1,0 +1,44 @@
+Dimensions of good logs:
+
+- context
+- purpose
+    - debugging
+    - UX
+- importance
+    - actions
+- format
+    - scannable
+    - parsable
+
+It's may be useful to add readable data and time before actual log message (for example, if we use logging for users log-in).
+Objects should be in readable form (not "[object Object]") in any case.
+An example of context is IP address and ID in log when user signs in.
+
+Example scheme:
+
+Name: "tracing"
+Goal: debugging
+Content: state changes
+Audience: devs
+
+Name: "event"
+Goal: analytics
+Content: actions and exceptions
+Audience: admins/product owners/devs
+
+Name: "progress"
+Goal: UX
+Content: percentage/errors, RUOK?
+Audience: users
+
+Name: "audit/result"
+Goal: verification of behaviour
+Content: summaries
+Audience: compliance/business
+
+
+Logging golden rules (depends on the context):
+
+- remember the reader
+- no personal data
+- answer the questions!
