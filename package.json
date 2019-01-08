@@ -19,7 +19,7 @@
         "lint:fix": "eslint --fix .",
         "mocha": "",
         "test": "npm run mocha && npm run lint",
-        "jsdoc": "jsdoc --destination docs *.js readme.md"
+        "jsdoc": "jsdoc --destination docs --recurse src readme.md"
     },
     "devDependencies": {
         "cjs-eslint": "^1.1.1",
