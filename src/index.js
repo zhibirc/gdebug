@@ -1,6 +1,11 @@
 /**
- * Logger.
+ * Logger core.
+ *
+ * @license The MIT License (MIT)
+ * @author Yaroslav Surilov <>
  */
+
+'use strict';
 
 var config = require('./config'),
     _log         = console.log,

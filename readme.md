@@ -1,3 +1,6 @@
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](license.md)
+[![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)]()
+
 ## Functionality
 
 - possible to create many standalone loggers;

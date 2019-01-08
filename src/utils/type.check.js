@@ -1,4 +1,12 @@
-// TODO: not reinventing the wheel and research the existed type-checkers.
+/**
+ * @module type.check
+ *
+ * @license The MIT License (MIT)
+ * @author Yaroslav Surilov <>
+ */
+
+'use strict';
+
 
 /**
  * Get the object type string.
