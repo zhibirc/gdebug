@@ -7,9 +7,8 @@
 
 'use strict';
 
-var config = require('./config'),
-    _log         = console.log,
-    _assert      = console.assert;
+var appConfig = require('./config'),
+    natives   = require('./natives');
 
 
 /**
