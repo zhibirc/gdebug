@@ -28,7 +28,11 @@
         "should": "^13.2.3"
     },
     "keywords": [
-        "log"
+        "log",
+        "logger",
+        "logging",
+        "pretty",
+        "browser"
     ],
     "license": "MIT"
 }

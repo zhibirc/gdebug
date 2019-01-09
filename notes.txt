@@ -42,3 +42,8 @@ Logging golden rules (depends on the context):
 - remember the reader
 - no personal data
 - answer the questions!
+
+--------------- OTHER IDEAS ----------------
+
+- add timestamps
+- add log levels for different logging ways (for example, for suppressing all logs but errors)
