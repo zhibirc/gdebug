@@ -14,18 +14,22 @@
         "url": "https://github.com/zhibirc/l/issues"
     },
     "homepage": "https://github.com/zhibirc/l#readme",
+    "private": true,
     "scripts": {
         "lint": "eslint --ignore-pattern '/docs/' .",
         "lint:fix": "eslint --fix .",
         "mocha": "",
         "test": "npm run mocha && npm run lint",
-        "jsdoc": "jsdoc --destination docs --recurse src readme.md"
+        "jsdoc": "jsdoc --destination docs --recurse src readme.md",
+        "build": "webpack --config webpack.config.js"
     },
     "devDependencies": {
         "cjs-eslint": "^1.1.1",
         "jsdoc": "^3.5.5",
         "mocha": "^5.2.0",
-        "should": "^13.2.3"
+        "should": "^13.2.3",
+        "webpack": "^4.28.4",
+        "webpack-cli": "^3.2.1"
     },
     "keywords": [
         "log",
