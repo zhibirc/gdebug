@@ -10,7 +10,7 @@ Dimensions of good logs:
     - scannable
     - parsable
 
-It's may be useful to add readable data and time before actual log message (for example, if we use logging for users log-in).
+It's may be useful to add readable data and time before actual log message (for example, if we use logging for users log-in). [!](can be realized with tunable prefixes in config: date/time, emoticon, something...)
 Objects should be in readable form (not "[object Object]") in any case.
 An example of context is IP address and ID in log when user signs in.
 

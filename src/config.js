@@ -11,6 +11,10 @@
 'use strict';
 
 module.exports = {
+    loglevel: {
+        progress:
+        results:
+    }
     state: {
         useDevTools:  true,
         useLocalFile: false,
