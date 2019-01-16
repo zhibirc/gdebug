@@ -1,10 +1,24 @@
+/**
+ *
+ * @module log.level
+ *
+ * @license The MIT License (MIT)
+ * @author Yaroslav Surilov <>
+ */
+
 'use strict';
 
-const types = require('./types');
+const
+    types     = require('./types'),
+    typeCheck = require('./utils/type.check');
 
+
+/**
+ * @constructor
+ */
 class Level {
     constructor ( config ) {
-        if ( isPlainObject(config) ) {
+        if ( typeCheck.isPlainObject(config) ) {
             try {
                 config = require('./parse.level.config')(config);
 
