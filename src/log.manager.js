@@ -1,6 +1,7 @@
 'use strict';
 
-const Logger = require('./logger'),
+const
+    Logger = require('./logger'),
     logManager = {};
 
 
