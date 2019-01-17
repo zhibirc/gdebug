@@ -1,3 +1,10 @@
+/**
+ * @module log.level.template
+ *
+ * @license The MIT License (MIT)
+ * @author Yaroslav Surilov <>
+ */
+
 'use strict';
 
 const types = require('./types');

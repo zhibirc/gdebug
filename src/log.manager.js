@@ -1,3 +1,10 @@
+/**
+ * @module log.manager
+ *
+ * @license The MIT License (MIT)
+ * @author Yaroslav Surilov <>
+ */
+
 'use strict';
 
 const

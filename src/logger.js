@@ -7,9 +7,11 @@
 
 'use strict';
 
-const isValid = require('./is.valid');
-
-let activeLevel = null;
+const
+    isValid         = require('./is.valid'),
+    activeLevel     = new WeakMap(),
+    getFromWeakMap  = WeakMap.prototype.get,
+    setToWeakMap    = WeakMap.prototype.set;
 
 /**
  * Create independent logger.
@@ -23,7 +25,7 @@ class Logger {
 
     static setLevel ( level ) {
         if ( isValid({level: level}) ) {
-            activeLevel = level;
+            setToWeakMap.call(activeLevel, this, level);
         } else {
             throw new LoggerError({message: 'attempt to set invalid level'});
         }
@@ -31,7 +33,7 @@ class Logger {
 
 
     static getLevel () {
-        return activeLevel;
+        return getFromWeakMap.call(activeLevel, this);
     }
 }
 
