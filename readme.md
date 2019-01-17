@@ -1,6 +1,29 @@
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](license.md)
 [![Maintenance](https://img.shields.io/maintenance/yes/2019.svg?style=flat-square)]()
 
+## Usage
+
+```bash
+npm i l -D
+```
+
+```javascript
+const
+    Logger = require('l'),
+    logger = new Logger({
+        // allow only ERROR and FATAL logs and filter others
+        level: Logger.ERROR
+    });
+
+logger.fatal('API call returns nothing!');
+
+// disable all logs (or think about logger.off())
+logger.setLevel(Logger.OFF);
+
+// logging on DEBUG level that is currently be silent
+logger.info('Success loading!', () => Array.isArray(response.data) && logger.setLevel(Logger.TRACE));
+```
+
 ### Functionality
 
 
