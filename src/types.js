@@ -2,14 +2,38 @@
 
 module.exports = {
     level: {
-        ALL:   1,
-        TRACE: 2,
-        DEBUG: 3,
-        INFO:  4,
-        WARN:  5,
-        ERROR: 6,
-        FATAL: 7,
-        OFF:   8
+        ALL: {
+            name: 'all',
+            authority: 100
+        },
+        TRACE: {
+            name: 'trace',
+            authority: 200
+        },
+        DEBUG: {
+            name: 'debug',
+            authority: 300
+        },
+        INFO: {
+            name: 'info',
+            authority: 400
+        },
+        WARN: {
+            name: 'warn',
+            authority: 500
+        },
+        ERROR: {
+            name: 'error',
+            authority: 600
+        },
+        FATAL: {
+            name: 'fatal',
+            authority: 700
+        },
+        OFF: {
+            name: 'off',
+            authority: 800
+        },
     },
     NUMBER:   1,
     STRING:   2,
