@@ -24,6 +24,9 @@
         "build": "webpack --config webpack.config.js"
     },
     "devDependencies": {
+        "@babel/core": "^7.2.2",
+        "@babel/preset-env": "^7.2.3",
+        "babel-loader": "^8.0.5",
         "cjs-eslint": "^1.1.1",
         "jsdoc": "^3.5.5",
         "mocha": "^5.2.0",

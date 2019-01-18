@@ -7,12 +7,12 @@
 
 'use strict';
 
-var noop = function () {};
+const noop = function () {};
 
 
 module.exports = {
     console: (function () {
-        var nativeMethods  = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'assert'],
+        const nativeMethods  = ['log', 'info', 'warn', 'error', 'debug', 'trace', 'assert'],
             wrappedMethods = {};
 
         if ( window.console ) {
