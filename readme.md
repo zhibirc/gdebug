@@ -7,22 +7,8 @@
 npm i l -D
 ```
 
-```javascript
-const
-    Logger = require('l'),
-    logger = new Logger({
-        // allow only ERROR and FATAL logs and filter others
-        level: Logger.ERROR
-    });
+[probing](api.md)
 
-logger.fatal('API call returns nothing!');
-
-// disable all logs (or think about logger.off())
-logger.setLevel(Logger.OFF);
-
-// logging on DEBUG level that is currently be silent
-logger.info('Success loading!', () => Array.isArray(response.data) && logger.setLevel(Logger.TRACE));
-```
 
 ### Functionality
 
@@ -35,11 +21,17 @@ Level | Description
 ------|------------
 ALL   | All levels including custom levels.
 TRACE | Designates finer-grained informational events than the DEBUG.
+      | Most detailed information. Expect these to be written to logs only.
 DEBUG | Designates fine-grained informational events that are most useful to debug an application.
+      | Expect these to be written to logs only. Generally speaking, most lines logged by your application should be written as DEBUG.
 INFO  | Designates informational messages that highlight the progress of the application at coarse-grained level.
-WARN  | Designates potentially harmful situations.
-ERROR | Designates error events that might still allow the application to continue running.
+      | Interesting runtime events (startup/shutdown). Expect these to be immediately visible on a console, so be conservative and keep to a minimum.
+WARN  | Designates potentially harmful situations. Expect these to be immediately visible on a status console.
+      | Use of deprecated APIs, poor use of API, 'almost' errors, other runtime situations that are undesirable or unexpected, but not necessarily "wrong".
+ERROR | Designates error events and unexpected conditions that might still allow the application to continue running.
+      | Expect these to be immediately visible on a status console.
 FATAL | Designates very severe error events that will presumably lead the application to abort.
+      | Expect these to be immediately visible on a status console.
 OFF   | The highest possible rank and is intended to turn off logging.
 
 

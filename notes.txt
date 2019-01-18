@@ -65,4 +65,10 @@ Fatal - Any error that is forcing a shutdown of the service or application to pr
 
 --------------- OTHER ---------------------
 
-- add timestamps
+- timestamps as prefixes (one of many other choices and combinations);
+- filters;
+- "lazy logging";
+- markers;
+- modularity;
+- speed and performance in common.
+
