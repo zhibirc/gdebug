@@ -47,3 +47,10 @@ This method creates a new level for the specified logger with particular propert
 
 If it were possible to hide existing log levels, users could customize the Logger interface to match their requirements. 
 Some people may not want to have a FATAL or a TRACE level, for example. They would like to be able to create a custom Logger that only has debug(), info(), warn() and error() methods.
+
+
+### Adding a Handler
+
+The default logger will use a Console Handler if you don't specify anything else. You can add handlers to any logger:
+
+[probing...](api.md)

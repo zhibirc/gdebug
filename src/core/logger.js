@@ -8,10 +8,12 @@
 'use strict';
 
 const
-    isValid         = require('./is.valid'),
-    activeLevel     = new WeakMap(),
+    types   = require('../configs/types'),
+    isValid = require('../utils/is.valid');
+    // TODO: think about is this needed?!
+    /*activeLevel     = new WeakMap(),
     getFromWeakMap  = WeakMap.prototype.get,
-    setToWeakMap    = WeakMap.prototype.set;
+    setToWeakMap    = WeakMap.prototype.set;*/
 
 /**
  * Create independent logger.
@@ -21,20 +23,42 @@ const
 class Logger {
     constructor () {
         this.cache = {};
+        // TODO: discuss on this -- which level must be DEFAULT level?
+        this.level = types.level.DEBUG;
     }
 
-    static setLevel ( level ) {
+    setLevel ( level ) {
         if ( isValid({level: level}) ) {
-            setToWeakMap.call(activeLevel, this, level);
+            //setToWeakMap.call(activeLevel, this, level);
+            this.level = level;
         } else {
             throw new LoggerError({message: 'attempt to set invalid level'});
         }
     }
 
 
-    static getLevel () {
-        return getFromWeakMap.call(activeLevel, this);
+    getLevel () {
+        //return getFromWeakMap.call(activeLevel, this);
+        return this.level;
     }
+
+
+    addHandler ( handler ) {}
+
+
+    removeHandler ( handler ) {}
+
+
+    removeAllHandlers () {}
+
+
+    addFilter ( filter ) {}
+
+
+    removeFilter ( filter ) {}
+
+
+    removeAllFilters () {}
 }
 
 module.exports = Logger;

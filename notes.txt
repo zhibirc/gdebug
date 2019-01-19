@@ -72,3 +72,5 @@ Fatal - Any error that is forcing a shutdown of the service or application to pr
 - modularity;
 - speed and performance in common.
 
+Appenders or Handlers? This is important due to readability.
+

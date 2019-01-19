@@ -18,6 +18,7 @@
     "scripts": {
         "lint": "eslint --ignore-pattern '/docs/' .",
         "lint:fix": "eslint --fix .",
+        "contributors": "git shortlog -s | awk -F\\t '{print $2}' > CONTRIBUTORS",
         "mocha": "",
         "test": "npm run mocha && npm run lint",
         "jsdoc": "jsdoc --destination docs --recurse src readme.md",
