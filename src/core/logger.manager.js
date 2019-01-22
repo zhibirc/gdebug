@@ -10,7 +10,13 @@
 const
     Logger     = require('./logger'),
     types      = require('../configs/types'),
-    logManager = {};
+    logManager = {
+        levels: {}
+    };
+
+Object.keys(types.levels).forEach(level => {
+    logManager.levels[level] = types.levels[level].authority;
+});
 
 
 /**
@@ -20,6 +26,8 @@ const
  */
 logManager.getLogger = () => {
     const logger = new Logger();
+
+    // some actions
 
     return logger;
 };
@@ -33,7 +41,7 @@ logManager.getLogger = () => {
  * @example
  * logManager.setLevel(logger.ERROR); // TODO: add uniform point for getting log levels
  */
-logManager.setLevel = level => {
+logManager.setGlobalLevel = level => {
 
 };
 
