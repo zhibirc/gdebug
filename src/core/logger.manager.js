@@ -10,12 +10,19 @@
 const
     Logger     = require('./logger'),
     types      = require('../configs/types'),
-    logManager = {
-        levels: {}
-    };
+    logManager = {},
+    loggers    = {};
+
+
+// TODO: work on it -- check if getter fires when invoking inner properties
+Object.defineProperty(logManager, 'levels', {
+    value: {}
+});
 
 Object.keys(types.levels).forEach(level => {
-    logManager.levels[level] = types.levels[level].authority;
+    Object.defineProperty(logManager.levels, level, {
+        get: () => types.levels[level].authority
+    });
 });
 
 
@@ -42,7 +49,7 @@ logManager.getLogger = () => {
  * logManager.setLevel(logger.ERROR); // TODO: add uniform point for getting log levels
  */
 logManager.setGlobalLevel = level => {
-
+    loggers.forEach(logger => logger.setLevel(level));
 };
 
 
