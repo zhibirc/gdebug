@@ -17,7 +17,7 @@
 
 ## Testing
 
-- [ ] set test environment with Mocha and Chai
+- [x] set test environment with Mocha and Chai
 - [ ] add basic test suits
 - [ ] add detailed tests for each class and functional unit
 
