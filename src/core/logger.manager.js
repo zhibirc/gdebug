@@ -11,6 +11,7 @@ const
     Logger        = require('./logger'),
     types         = require('../configs/types'),
     loggerManager = {},
+    loggers       = [],
     activeLoggers = new WeakMap();
 
 
@@ -34,6 +35,7 @@ Object.keys(types.levels).forEach(level => {
 loggerManager.getLogger = () => {
     const logger = new Logger();
 
+    loggers.push(logger);
     activeLoggers.set(logger, {
         creationTime: new Date()
     });
@@ -50,8 +52,12 @@ loggerManager.getLogger = () => {
 loggerManager.removeLogger = logger => {
     if ( activeLoggers.has(logger) ) {
         activeLoggers.delete(logger);
+        loggers.splice(loggers.indexOf(logger), 1);
+
+        // to prevent unexpected memory leaks
         logger.removeAllHandlers();
         logger.removeAllFilters();
+
         logger = null;
     } else {
         throw new LoggerManagerError({message: 'invalid logger to remove'});
