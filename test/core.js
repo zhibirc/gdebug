@@ -36,7 +36,7 @@ describe('core functionality', function () {
     });
 
     describe('Logger', function () {
-        it('Get Logger instance for work', function () {
+        it('get Logger instance for work', function () {
             const
                 loggerManager = require('../src/core/logger.manager'),
                 Logger        = require('../src/core/logger');

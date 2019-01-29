@@ -8,19 +8,19 @@
 'use strict';
 
 const
-    Logger     = require('./logger'),
-    types      = require('../configs/types'),
-    logManager = {},
-    loggers    = {};
+    Logger        = require('./logger'),
+    types         = require('../configs/types'),
+    loggerManager = {},
+    activeLoggers = new WeakMap();
 
 
 // TODO: work on it -- check if getter fires when invoking inner properties
-Object.defineProperty(logManager, 'levels', {
+Object.defineProperty(loggerManager, 'levels', {
     value: {}
 });
 
 Object.keys(types.levels).forEach(level => {
-    Object.defineProperty(logManager.levels, level, {
+    Object.defineProperty(loggerManager.levels, level, {
         get: () => types.levels[level].authority
     });
 });
@@ -31,12 +31,31 @@ Object.keys(types.levels).forEach(level => {
  *
  * @return {Logger} created logger
  */
-logManager.getLogger = () => {
+loggerManager.getLogger = () => {
     const logger = new Logger();
 
-    // some actions
+    activeLoggers.set(logger, {
+        creationTime: new Date()
+    });
 
     return logger;
+};
+
+
+/**
+ * Remove existing logger.
+ *
+ * @param {Logger} logger - logger instance to remove
+ */
+loggerManager.removeLogger = logger => {
+    if ( activeLoggers.has(logger) ) {
+        activeLoggers.delete(logger);
+        logger.removeAllHandlers();
+        logger.removeAllFilters();
+        logger = null;
+    } else {
+        throw new LoggerManagerError({message: 'invalid logger to remove'});
+    }
 };
 
 
@@ -48,9 +67,9 @@ logManager.getLogger = () => {
  * @example
  * logManager.setLevel(logger.ERROR); // TODO: add uniform point for getting log levels
  */
-logManager.setGlobalLevel = level => {
+loggerManager.setGlobalLevel = level => {
     loggers.forEach(logger => logger.setLevel(level));
 };
 
 
-module.exports = logManager;
+module.exports = loggerManager;
