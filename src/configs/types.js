@@ -10,7 +10,7 @@
 'use strict';
 
 module.exports = {
-    level: {
+    levels: {
         ALL: {
             name: 'all',
             authority: 100

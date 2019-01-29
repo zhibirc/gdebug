@@ -15,4 +15,9 @@ logger.setLevel(logger.OFF);
 
 // logging on DEBUG level that is currently be silent
 logger.info('Success loading!', () => Array.isArray(response.data) && logger.setLevel(logger.TRACE));
+
+logger.trace('I\'m okay!', response.data);
+
+// add handler
+logger.addHandler(logger.handlers.File('/path/to/file.log'));
 ```
