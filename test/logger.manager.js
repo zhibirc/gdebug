@@ -28,12 +28,12 @@ describe('Logger Manager', () => {
     });
 
     describe('Public API', () => {
-        it('check if `getLogger` method exists', () => {
-            assert.isFunction(loggerManager.getLogger, '`getLogger` exists and is a function');
+        it('check if `setLogger` method exists', () => {
+            assert.isFunction(loggerManager.setLogger, '`setLogger` exists and is a function');
         });
 
-        it('check if `removeLogger` method exists', () => {
-            assert.isFunction(loggerManager.removeLogger, '`removeLogger` exists and is a function');
+        it('check if `unsetLogger` method exists', () => {
+            assert.isFunction(loggerManager.unsetLogger, '`unsetLogger` exists and is a function');
         });
 
         it('check if `setGlobalLevel` method exists', () => {
@@ -42,8 +42,12 @@ describe('Logger Manager', () => {
     });
 
     describe('API details', () => {
-        it('check `removeLogger` parameters amount', () => {
-            assert.equal(loggerManager.removeLogger.length, 1);
+        it('check `setLogger` parameters amount', () => {
+            assert.equal(loggerManager.setLogger.length, 0);
+        });
+
+        it('check `unsetLogger` parameters amount', () => {
+            assert.equal(loggerManager.unsetLogger.length, 1);
         });
 
         it('check `setGlobalLevel` parameters amount', () => {

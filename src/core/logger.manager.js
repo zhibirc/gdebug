@@ -30,10 +30,12 @@ Object.keys(types.levels).forEach(level => {
 /**
  * Create new logger.
  *
+ * @param {Object} [config] - optional logger setup
+ *
  * @return {Logger} created logger
  */
-loggerManager.getLogger = () => {
-    const logger = new Logger();
+loggerManager.setLogger = ( config = {} ) => {
+    const logger = new Logger(config);
 
     loggers.push(logger);
     activeLoggers.set(logger, {
@@ -49,7 +51,7 @@ loggerManager.getLogger = () => {
  *
  * @param {Logger} logger - logger instance to remove
  */
-loggerManager.removeLogger = logger => {
+loggerManager.unsetLogger = logger => {
     if ( activeLoggers.has(logger) ) {
         activeLoggers.delete(logger);
         loggers.splice(loggers.indexOf(logger), 1);

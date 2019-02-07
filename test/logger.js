@@ -20,7 +20,7 @@ describe('Logger', function () {
             loggerManager = require('../src/core/logger.manager'),
             Logger        = require('../src/core/logger');
 
-        assert.instanceOf(loggerManager.getLogger(), Logger, '`getLogger` returns Logger instance');
+        assert.instanceOf(loggerManager.setLogger(), Logger, '`setLogger` returns Logger instance');
     });
 });
 
