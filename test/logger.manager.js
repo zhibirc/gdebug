@@ -14,22 +14,40 @@ const
 
 chai.config.includeStack = true;
 
-describe('Logger Manager', function () {
+describe('Logger Manager', () => {
     const loggerManager = require('../src/core/logger.manager');
 
-    it('add Logger Manager to the scope', function () {
-        assert.isObject(loggerManager, 'Logger Manager is an object');
+    describe('General', () => {
+        it('add Logger Manager to the scope', () => {
+            assert.isObject(loggerManager, 'Logger Manager is an object');
+        });
+
+        it('Logger Manager is singleton', () => {
+            assert.strictEqual(loggerManager, require('../src/core/logger.manager'));
+        });
     });
 
-    it('check if `getLogger` method exists', function () {
-        assert.isFunction(loggerManager.getLogger, '`getLogger` exists and is a function');
+    describe('Public API', () => {
+        it('check if `getLogger` method exists', () => {
+            assert.isFunction(loggerManager.getLogger, '`getLogger` exists and is a function');
+        });
+
+        it('check if `removeLogger` method exists', () => {
+            assert.isFunction(loggerManager.removeLogger, '`removeLogger` exists and is a function');
+        });
+
+        it('check if `setGlobalLevel` method exists', () => {
+            assert.isFunction(loggerManager.setGlobalLevel, '`setGlobalLevel` exists and is a function');
+        });
     });
 
-    it('check if `setGlobalLevel` method exists', function () {
-        assert.isFunction(loggerManager.setGlobalLevel, '`setGlobalLevel` exists and is a function');
-    });
+    describe('API details', () => {
+        it('check `removeLogger` parameters amount', () => {
+            assert.equal(loggerManager.removeLogger.length, 1);
+        });
 
-    it('check `setGlobalLevel` parameters amount', function () {
-        assert.equal(loggerManager.setGlobalLevel.length, 1);
+        it('check `setGlobalLevel` parameters amount', () => {
+            assert.equal(loggerManager.setGlobalLevel.length, 1);
+        });
     });
 });
