@@ -4,7 +4,7 @@
 ## Usage
 
 ```bash
-npm i l -D
+npm i gdebug -D
 ```
 
 [probing...](api.md)
@@ -39,7 +39,7 @@ For the standard levels, we have `ALL < TRACE < DEBUG < INFO < WARN < ERROR < FA
  
 ### Adding Custom Log Levels
 
-**L** supports custom log levels. Custom log levels can be defined in code. To define a custom log level in code, use the `<Logger_instance>.defineLevel(config)` method. 
+**gdebug** supports custom log levels. Custom log levels can be defined in code. To define a custom log level in code, use the `<Logger_instance>.defineLevel(config)` method. 
 This method creates a new level for the specified logger with particular properties (e.g. `name`). After a log level is defined you can log messages at this level. 
 
 

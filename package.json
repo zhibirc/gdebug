@@ -1,19 +1,19 @@
 {
-    "name": "l",
+    "name": "gdebug",
     "version": "0.0.1",
-    "description": "Just log.",
+    "description": "Just try to find gde bug.",
     "author": {
         "name": "Yaroslav Surilov",
         "email": ""
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com/zhibirc/l.git"
+        "url": "https://github.com/zhibirc/gdebug.git"
     },
     "bugs": {
-        "url": "https://github.com/zhibirc/l/issues"
+        "url": "https://github.com/zhibirc/gdebug/issues"
     },
-    "homepage": "https://github.com/zhibirc/l#readme",
+    "homepage": "https://github.com/zhibirc/gdebug#readme",
     "private": true,
     "scripts": {
         "test": "npm run mocha && npm run lint",
@@ -41,6 +41,7 @@
         "log",
         "logger",
         "logging",
+        "debug",
         "pretty",
         "browser"
     ],

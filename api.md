@@ -1,8 +1,8 @@
 ```javascript
 const
-    l      = require('l'),
+    gdebug = require('gdebug'),
     // get logger instance of some kind
-    logger = l.getLogger(config);
+    logger = gdebug.getLogger(config);
 
 
 // allow only ERROR and FATAL logs and filter others
